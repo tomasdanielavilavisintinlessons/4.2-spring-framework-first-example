@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Questo file xml è quello necessario per avere una 
+configurazione annotation based -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+               
+     <context:annotation-config/>
+     <!-- Questo tag va aggiunto per dire dove andare a prendere i bean -->
+     <context:component-scan base-package="com.z9devs.SpringFrameworkTutorial"></context:component-scan>
+     
+     <!-- In questo caso sto utilizzando una configurazione mista -->
+     <bean id="tyre" class="com.z9devs.SpringFrameworkTutorial.Tyre">
+		<!-- Posso valorizzare le proprietà con valori di default già da qui -->
+		<property name="brand" value="Mercedes"></property>
+		<!-- 
+		 <constructor-arg value="Mercedes"></constructor-arg>
+		 si può fare la stessa cosa con un costruttore
+		 -->
+	</bean>
+</beans>
